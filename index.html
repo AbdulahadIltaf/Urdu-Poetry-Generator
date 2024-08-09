@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Dorang landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Dorang | Free Bootstrap 4.3.x template</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + Dorang main styles -->
+    <link rel="stylesheet" href="assets/css/dorang.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#contact-form').on('submit', function(event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/send_email',
+                    data: formData,
+                    success: function(response) {
+                        $('#form-message').text('Message sent successfully!').css('color', 'green').show();
+                        $('#contact-form')[0].reset();
+                    },
+                    error: function(error) {
+                        $('#form-message').text('An error occurred while sending the message.').css('color', 'red').show();
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="dark-theme">
+    
+    <!-- page navbar -->
+    <nav class="page-navbar" data-spy="affix" data-offset-top="1">
+        <ul class="nav-navbar container">
+
+            <li class="nav-item"><a href="#" class="nav-link"><img src="assets/imgs/placeholder.png" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, weber Landing page"></a></li>
+
+
+                </div>
+            </li>
+        </ul>
+    </nav><!-- end of page navbar -->
+
+    <!-- <div class="theme-selector">
+        <a href="javascript:void(0)" class="spinner">
+            <i class="ti-paint-bucket"></i>
+        </a>
+        <div class="body">
+            <a href="javascript:void(0)" class="light"></a>
+            <a href="javascript:void(0)" class="dark"></a>
+        </div>
+    </div>   -->
+
+    <!-- page header -->
+    <header class="header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <h1 class="header-title">Poetry Generator</h1>
+            <p class="header-subtitle">AI-Powered Urdu Poetry Generation Using NLP</p>
+            <button class="btn btn-theme-color" onclick="generatePoetry()"><i class="ti-control-play text-danger"></i> Generate </button>
+        </div>
+
+        <!-- Poetry Container -->
+        <div id="poetry-container" class="col-md-10 col-lg-8 m-auto mt-5 poetry-container">
+            <div id="poetry" style="font-size: 20px;"></div>
+        </div>
+    </header><!-- end of page header -->
+
+    <!-- page container -->
+    <div class="container page-container">
+        <div class="col-md-10 col-lg-8 m-auto">
+            <h6 class="title mb-4">Explore the Elegance of Urdu Poetry</h6>
+            <p class="mb-5">"Embark on a journey through the vibrant tapestry of Urdu poetry, where every word weaves a tale of passion, nostalgia, and profound beauty. Discover the soul-stirring verses that transcend time and culture, inviting you to explore the rich heritage of poetic expression."</p>
+        </div>  
+
+        <!-- row -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <a href="javascript:void(0)" class="overlay-img">
+                    <img src="assets/imgs/img-1.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, weber Landing page">  
+                    <div class="overlay"></div> 
+                    <div class="des">
+                        <h1 class="title">Jhon Elia</h1>
+                        <h6 class="subtitle">Syed Hussain Jaun Elia</h6>
+                        <p>Jaun Elia (1931-2002) was a modern Urdu poet known for his melancholic verses and deep introspection on existential themes, making a profound impact on contemporary Urdu literature.</p>
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="javascript:void(0)" class="overlay-img">
+                    <img src="assets/imgs/img-2.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, weber Landing page">  
+                    <div class="overlay"></div> 
+                    <div class="des">
+                        <h1 class="title">Ghalib</h1>
+                        <h6 class="subtitle">Mirza Asadullah Baig Khan</h6>
+                        <p>Renowned for his philosophical depth and romantic poetry, Mirza Ghalib (1797-1869) is a central figure in Urdu literature, celebrated for his mastery of language and profound ghazals.</p>
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="javascript:void(0)" class="overlay-img">
+                    <img src="assets/imgs/img-3.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, weber Landing page">  
+                    <div class="overlay"></div> 
+                    <div class="des">
+                        <h1 class="title">Iqbal</h1>
+                        <h6 class="subtitle">Muhammad Iqbal</h6>
+                        <p>Allama Iqbal (1877-1938) was a philosopher-poet who envisioned a separate Muslim state in British India. His poetry reflects spiritual introspection and the revival of Islamic identity.</p>
+                    </div>          
+                </a>
+            </div>          
+        </div><!-- end of row -->
+    </div> <!-- end of page container -->
+
+    <!--footer & pre footer -->
+    <div class="contact-section">
+        <div class="overlay"></div>
+        <!-- container -->
+        <div class="container">
+            <div class="col-md-10 col-lg-8 m-auto">
+                <h6 class="title mb-2">Contact Us</h6>
+                <p class="mb-5">Feel Free To Drop Us A Line.</p>
+                <form id="contact-form" class="form-group">
+                    <input type="text" size="50" class="form-control" placeholder="Your Name" name="name" required>
+                    <input type="email" class="form-control" placeholder="Enter Email" name="email" required>
+                    <textarea name="comment" id="comment" rows="6" class="form-control" placeholder="Write Something" required></textarea>
+                    <input type="submit" value="Send Message" class="form-control">
+                </form>
+                <div id="form-message" style="display: none; margin-top: 10px;"></div>
+            </div>
+
+            <!-- footer -->
+            <footer class="footer">
+                <p class="infos">&copy; <script>document.write(new Date().getFullYear())</script>, Made with <i class="ti-heart text-danger"></i> by <a href="http://www.devcrud.com">a.Ahad</a></p>       
+                <span>|</span>  
+                <div class="links">
+                    <a href="#">About</a>
+                    <a href="#">Explore</a>
+                    <a href="#">Journal</a>
+                </div>
+            </footer><!-- end of footer -->
+        </div><!-- end of container -->
+    </div><!-- end of pre footer -->
+
+    <!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <!-- bootstrap affix -->
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    <!-- Dorang js -->
+    <script src="assets/js/dorang.js"></script>
+
+    <script>
+        async function generatePoetry() {
+            const response = await fetch('/generate_poetry');
+            const data = await response.json();
+            const poetry = data.poetry;
+            document.getElementById('poetry').innerHTML = poetry.join('<br>');
+        }
+    </script>
+
+</body>
+</html>
