@@ -17,6 +17,7 @@ iqbal_path = os.path.join(script_dir, 'iqbal.txt')
 password_path = os.path.join(script_dir, 'password.txt')
 
 
+nltk.download('stopwords')
 nltk.download('punkt')
 
 
