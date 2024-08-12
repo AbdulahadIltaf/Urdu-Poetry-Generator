@@ -16,6 +16,10 @@ ghalib_path = os.path.join(script_dir, 'ghalib.txt')
 iqbal_path = os.path.join(script_dir, 'iqbal.txt')
 password_path = os.path.join(script_dir, 'password.txt')
 
+
+nltk.download('punkt')
+
+
 # Read the content of the files
 with open(ghalib_path, 'r', encoding='utf-8') as file:
     data2 = file.readlines()
